@@ -156,10 +156,10 @@ public class Silly implements Comparable<Silly>{
 
         Silly other = (Silly) o; // To access .name of o, we need to cast it.
 
-        return this.name.equals(other.name);
-
         // Hint: to compare strings, we need to use .equals()
         //       e.g. s1.equals(s2)
+
+        return this.name.equals(other.name);
     }
 
     /**
@@ -185,10 +185,13 @@ public class Silly implements Comparable<Silly>{
     @Override
     public int compareTo(Silly other) {
 
-        if (this.name.length() > other.name.length()) {
+        int this_length = this.name.length();
+        int other_length = other.name.length();
+
+        if (this_length > other_length) {
             return 1;
         }
-        else if (this.name.length() < other.name.length()) {
+        else if (this_length < other_length) {
             return -1;
         }
         else {
